@@ -1,0 +1,254 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#main{
+    position: relative;
+    overflow: hidden;
+}
+#page{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+#page1{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+#page2{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+#page3{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+#page4{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f1f1f1;
+}
+canvas{
+    position: fixed; /* ทำให้ Canvas อยู่ค้างที่หน้าจอ */
+  top: 0;
+  left: 0;
+  width: 100vw; /* ขยายเต็มหน้าจอกว้าง */
+  height: 100vh; /* ขยายเต็มหน้าจอสูง */
+  z-index: 1; /* วาง Canvas อยู่ด้านหลังเนื้อหาอื่นๆ */
+}
+#loop{
+    display: flex;
+    position: absolute;
+    top: 30%;
+    height: 25%;
+    width: 100%;
+    font-size: 100px;
+    white-space: nowrap;
+    font-family: gilroy;
+}
+#loop>h1{
+    font-weight: 400;
+    animation-name: anim;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#loop>h1>span{
+    -webkit-text-stroke: 1.2px #000;
+    color: transparent;
+    font-weight: 500;
+}
+@keyframes anim{
+    0%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+#nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 7%;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding: 0px 30px;
+}
+#nav>h3{
+    font-family: gilroy;
+    font-weight: 400;
+    font-size: 22px;
+}
+#nav>button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+#page>h3{
+    position: absolute;
+    top: 55%;
+    font-family: gilroy;
+    font-weight: 400;
+    color: #7c7c7c;
+    left: 5%;
+}
+#page>h4{
+    position: absolute;
+    top: 62%;
+    left: 25%;
+    font-family: gilroy;
+    font-weight: 500;
+}
+#page1>#right-text{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+#page1>#right-text>h3{
+    font-weight: 400;
+    color: #7c7c7c;
+}
+#page1>#right-text>h1{
+    line-height: 1.5;
+    font-size: 40px;
+}
+#page1>#left-text{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    text-align: end;
+}
+#page1>#left-text>h1{
+    font-size: 40px;
+    line-height: 1.5;
+}
+#page1>#left-text>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page2>#left-text>h1{
+    font-size: 70px;
+    line-height: 1.5;
+}
+#page2>#left-text>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page3>#left-text>h1{
+    font-size: 40px;
+    line-height: 1.5;
+}
+#page3>#left-text>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page4>#left-text>h1{
+    font-size: 100px;
+    line-height: 1.5;
+}
+#page4>#left-text>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page2>#text1{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+#page2>#text1>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page2>#text1>h1{
+    font-size: 70px;
+    line-height: 1.5;
+}
+#page2>#text2{
+    text-align: left; /* จัดข้อความให้อยู่ชิดซ้าย */
+    position: absolute; /* กำหนดตำแหน่งให้แน่นอน */
+    left: 10%; /* ระยะห่างจากขอบซ้าย สามารถปรับตามความเหมาะสม */
+    top: 30%; /* ระยะห่างจากขอบบน ปรับตามต้องการ */
+    width: 80%; /* ความกว้างของกล่องข้อความ */
+}
+#page2>#text2>h1{
+    color: #000000;
+    font-weight: 400;
+    font-size: 60px;
+}
+#page2>#text2>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page3>#text3 {
+    position: absolute;
+    top: 40%;
+    left: 5%; /* จัดตำแหน่งให้ติดด้านซ้าย */
+    text-align: left;
+}
+#page3>#text3>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page3>#text3>h1{
+    font-size: 70px;
+
+}
+#page4>#text4{
+    position: absolute;
+    top: 40%;
+    right: 10%;
+    text-align: left;
+}
+#page4>#text4>h3{
+    color: #7c7c7c;
+    font-weight: 400;
+}
+#page4>#text3>h1{
+    font-size: 100px;
+
+}
+.theme-toggle-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50; /* สีเขียว */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .theme-toggle-button:hover {
+    background-color: #45a049;
+  }
+  #text4 h1 {
+    font-family: gilroy; 
+    font-weight: 400; 
+    color: #000; 
+    font-size: 60px; 
+    z-index: 10; 
+}
+#text4 a {
+    position: relative; 
+    z-index: 10; 
+}
+  

@@ -1,0 +1,85 @@
+.skills {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+  }
+  
+  .skills-container {
+    display: flex; /* ใช้ flexbox สำหรับจัดเรียง */
+    justify-content: space-between; /* เว้นระยะระหว่างแถบทักษะ */
+    width: 150%; /* ใช้ความกว้างทั้งหมด */
+  }
+  
+  
+  .skill-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    margin: 20px 0;
+  }
+  
+  .skill-bar {
+    height: 14px;
+    background: #282828;
+    border-radius: 3px;
+    width: 100%; /* ทำให้แถบทักษะใช้ความกว้างทั้งหมดของคอนเทนเนอร์ */
+    padding: 2px;
+  }
+  
+  
+  .skill-percentage {
+    height: 14px;
+    background: #FF96AD;
+    border-radius: 3px; /* Fixed the typo here */
+    position: relative;
+    animation: fillBars 2.5s 1;
+  }
+  
+  .skill-percentage::before {
+    content: attr(per);
+    position: absolute;
+    padding: 4px 6px;
+    background: #fff5fd; /* Fixed color capitalization */
+    border-radius: 4px;
+    font-size: 12px;
+    top: -35px;
+    right: 0;
+    transition: transform 0.5s; /* Corrected transition syntax */
+  }
+  
+  .skill-percentage::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #005A8D;
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+  }
+  
+  @keyframes fillBars {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .skills-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out left and right sections */
+  }
+  
+  .skills {
+    width: 48%; /* Adjust width for better spacing */
+  }
+  
+  .skill {
+    margin-bottom: 10px; /* Space between each skill */
+  }
+
+  
+  

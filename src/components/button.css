@@ -1,0 +1,209 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: calc(100% - 2rem);
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.credit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  font-family: arial;
+}
+
+.switch {
+  position: relative;
+  overflow: hidden;
+  width: calc(7.5rem * 0.9); /* ลดความกว้างเป็น 90% */
+  height: calc(4rem * 0.9); /* ลดความสูงเป็น 90% */
+}
+
+.switch input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.switch label {
+  cursor: pointer;
+}
+
+.background {
+  z-index: 1;
+  position: absolute;
+  width: calc(7.5rem * 0.9); /* ปรับความกว้างให้ตรงกับความกว้างใหม่ */
+  height: calc(4rem * 0.9); /* ปรับความสูงให้ตรงกับความสูงใหม่ */
+  border-radius: calc(2.5rem * 0.9); /* ปรับมุมโค้งให้สัมพันธ์กับขนาดใหม่ */
+  border: 0.25rem solid #202020;
+  background: linear-gradient(to right, #484848 0%, #202020 100%);
+  transition: all 0.3s;
+}
+
+.stars1,
+.stars2 {
+  position: absolute;
+  height: calc(0.4rem * 0.9); /* ปรับขนาดดาวให้สัมพันธ์กับขนาดใหม่ */
+  width: calc(0.4rem * 0.9); /* ปรับขนาดดาวให้สัมพันธ์กับขนาดใหม่ */
+  background: #FFFFFF;
+  border-radius: 50%;
+  transition: 0.3s all ease;
+}
+
+.stars1 {
+  top: calc(6px * 0.9); /* ปรับตำแหน่งให้สัมพันธ์กับขนาดใหม่ */
+  right: calc(23px * 0.9);
+}
+
+.stars2 {
+  top: calc(40px * 0.9); /* ปรับตำแหน่งให้สัมพันธ์กับขนาดใหม่ */
+  right: calc(48px * 0.9);
+}
+
+.stars1:after,
+.stars1:before,
+.stars2:after,
+.stars2:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: calc(0.25rem * 0.9); /* ปรับขนาดดาวให้สัมพันธ์กับขนาดใหม่ */
+  width: calc(0.25rem * 0.9); /* ปรับขนาดดาวให้สัมพันธ์กับขนาดใหม่ */
+  background: #FFFFFF;
+  border-radius: 50%;
+  transition: 0.2s all ease;
+}
+
+.stars1:after {
+  top: calc(8px * 0.9);
+  right: calc(20px * 0.9);
+}
+
+.stars1:before {
+  top: calc(18px * 0.9);
+  right: calc(-12px * 0.9);
+}
+
+.stars2:after {
+  top: calc(-8px * 0.9);
+  right: calc(-16px * 0.9);
+}
+
+.stars2:before {
+  top: calc(6px * 0.9);
+  right: calc(-26px * 0.9);
+}
+
+.sun-moon {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  height: calc(3rem * 0.9); /* ลดความสูงเป็น 90% */
+  width: calc(3rem * 0.9); /* ลดความกว้างเป็น 90% */
+  margin: calc(0.5rem * 0.9); /* ปรับระยะห่างให้สัมพันธ์กับขนาดใหม่ */
+  background: #FFFDF2;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  
+  /* Default to Moon */
+  border: 0.25rem solid #DEE2C6;
+}
+
+.sun-moon .dots {
+  position: absolute;
+  top: calc(3px * 0.9); /* ปรับตำแหน่งให้สัมพันธ์กับขนาดใหม่ */
+  left: calc(23px * 0.9);
+  height: calc(1rem * 0.9); /* ลดขนาดลง 90% */
+  width: calc(1rem * 0.9); /* ลดขนาดลง 90% */
+  background: #EFEEDB;
+  border: 0.25rem solid #DEE2C6;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+}
+
+.sun-moon .dots:after,
+.sun-moon .dots:before {
+  position: absolute;
+  content: "";
+  display: block;
+  height: calc(0.25rem * 0.9); /* ปรับขนาดให้สัมพันธ์กับขนาดใหม่ */
+  width: calc(0.25rem * 0.9); /* ปรับขนาดให้สัมพันธ์กับขนาดใหม่ */
+  background: #EFEEDB;
+  border: 0.25rem solid #DEE2C6;
+  border-radius: 50%;
+  transition: 0.4s all ease;
+}
+
+.sun-moon .dots:after {
+  top: calc(-40px * 0.9);
+  left: calc(-26px * 0.9);
+}
+
+.sun-moon .dots:before {
+  top: calc(18px * 0.9);
+  left: calc(-10px * 0.9);
+}
+
+/* Transition to Sun */
+
+.switch input:checked ~ .sun-moon {
+  left: calc(100% - 4rem);
+  background: #F5EC59;
+  border-color: #E7C65C;
+  transform: rotate(-25deg);
+}
+
+.switch input:checked ~ .sun-moon .dots,
+.switch input:checked ~ .sun-moon .dots:after,
+.switch input:checked ~ .sun-moon .dots:before {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+.switch input:checked ~ .sun-moon .dots {
+  height: calc(1.5rem * 0.9);
+  width: calc(1.5rem * 0.9);
+  top: 0px;
+  left: -20px;
+  transform: rotate(25deg);
+}
+
+.switch input:checked ~ .sun-moon .dots:after {
+  height: calc(0.65rem * 0.9);
+  width: calc(0.65rem * 0.9);
+  top: 2px;
+  left: -12px;
+}
+
+.switch input:checked ~ .sun-moon .dots:before {
+  height: calc(0.4rem * 0.9);
+  width: calc(0.4rem * 0.9);
+  top: 6px;
+  left: 14px;
+}
+
+.switch input:checked ~ .background .stars1,
+.switch input:checked ~ .background .stars2 {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.switch input:checked ~ .background {
+  border: 0.25rem solid #78C1D5;
+  background: linear-gradient(to right, #78C1D5 0%, #BBE7F5 100%);
+}
