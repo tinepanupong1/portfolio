@@ -46,8 +46,7 @@ const CanvasComponent = ({ theme }) => {
       const img = images.current[imageSeq.current.frame];
 
       if (img && img.complete) {
-        // กำหนดตัวแปร scaleFactor เพื่อลดขนาดของภาพ dark
-        const scaleFactor = theme === 'dark' ? 0.9 : 1; // ลดขนาด 10% เมื่อเป็นธีม dark
+        const scaleFactor = theme === 'dark' ? 0.9 : 1;
 
         const hRatio = (canvas.width / img.width) * scaleFactor;
         const vRatio = (canvas.height / img.height) * scaleFactor;
